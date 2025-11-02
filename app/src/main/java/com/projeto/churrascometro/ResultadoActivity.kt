@@ -1,39 +1,20 @@
 package com.projeto.churrascometro
 
-import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
-class MainActivity : AppCompatActivity() {
+class ResultadoActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_resultado)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-
-        val NumAdultos = findViewById<EditText>(R.id.edt_adultos)
-        val NumCriancas = findViewById<EditText>(R.id.edt_criancas)
-        val duracao = findViewById<EditText>(R.id.edt_duracao)
-        val btnCalculo = findViewById<Button>(R.id.btn_calcular)
-
-        btnCalculo.setOnClickListener {
-            val adultos = NumAdultos.text.toString()
-            val criancas = NumCriancas.text.toString()
-            val horas = duracao.text.toString()
-
-
-
-        }
-
-
     }
 }
